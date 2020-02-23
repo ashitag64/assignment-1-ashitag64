@@ -31,6 +31,12 @@ public class Main {
                     myProgram.view();
                     break;
                 }
+                case 3: {
+                    System.out.println("You could search for a contact from their first names: ");
+                    String name = scanner.nextLine();
+                    myProgram.search(name);
+                    break;
+                }
             }
         }
     }

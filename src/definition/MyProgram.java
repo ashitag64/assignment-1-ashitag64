@@ -54,9 +54,29 @@ public class MyProgram implements MyProgramADT {
         }
     }
 
+    //search() method to search for a contact in the contact list.
     @Override
     public void search(String item) {
-
+        Node temp = head;
+        int count = 0;
+        ArrayList<Person> list = new ArrayList<>();
+        while (temp != null) {
+            if (temp.getData().getFName().equals(item)) {
+                count += 1;
+                list.add((Person) temp.getData());
+            }
+            temp = temp.getNext();
+        }
+        if (count != 0) {
+            System.out.println(count + " match found!");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println("-------- * -------- * -------- * --------");
+                System.out.println(list.get(i));
+                System.out.println("-------- * -------- * -------- * --------");
+            }
+        } else {
+            System.out.println("NO RESULTS FOUND!");
+        }
     }
 
     @Override
