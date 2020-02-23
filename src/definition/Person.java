@@ -44,4 +44,20 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    //toString method
+    @Override
+    public String toString() {
+        if (getContactList().size() == 1) {
+            return "First Name: " + getFName() + "\n"
+                    + "Last Name: " + getLName() + "\n"
+                    + "Contact Number: " + getContactList().get(0) + "\n"
+                    + "Email address: " + getEmail();
+        } else {
+            return "First Name: " + getFName() + "\n"
+                    + "Last Name: " + getLName() + "\n"
+                    + "Contact Number(s): " + getContactList() + "\n"
+                    + "Email address: " + getEmail();
+        }
+    }
 }
