@@ -12,4 +12,8 @@ public interface MyProgramADT {
 
     //search() method to search for a contact in the contact list
     void search(String item);
+
+    //delete() method to delete a contact from the contact list
+    void delete(int item);
+
 }
