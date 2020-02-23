@@ -79,9 +79,33 @@ public class MyProgram implements MyProgramADT {
         }
     }
 
+    //delete() method to delete a contact from the contact list.
     @Override
     public void delete(int item) {
-
+        Node temp = head;
+        Node previous = null;
+        String result = "";
+        if (item == 1) {
+            result = (String) (temp.getData().getFName() + " " + temp.getData().getLName());
+            System.out.println(result + "'s contact deleted from list!");
+            head = temp.getNext();
+            temp = head;
+        } else {
+            try {
+                for (int i = 1; i <= size; i++) {
+                    if (i == item) {
+                        result = (String) (temp.getData().getFName() + " " + temp.getData().getLName());
+                        System.out.println(result + "'s contact deleted from list!");
+                        previous.setNext(temp.getNext());
+                        break;
+                    }
+                    previous = temp;
+                    temp = temp.getNext();
+                }
+            } catch (NullPointerException e) {
+                System.out.println("Contact List is Empty!");
+            }
+        }
     }
 
     //displayList() method to display the list of contact names of the contact list.
