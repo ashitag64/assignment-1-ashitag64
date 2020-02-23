@@ -45,6 +45,14 @@ public class Main {
                     myProgram.delete(num);
                     break;
                 }
+                case 5: {
+                    System.exit(0);
+                    break;
+                }
+                default: {
+                    System.out.println("Wrong Choice!");
+                    break;
+                }
             }
         }
     }
