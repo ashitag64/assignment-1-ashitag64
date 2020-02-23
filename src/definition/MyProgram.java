@@ -84,8 +84,15 @@ public class MyProgram implements MyProgramADT {
 
     }
 
+    //displayList() method to display the list of contact names of the contact list.
     @Override
     public void displayList() {
-
+        Node temp = head;
+        int num = 1;
+        while (temp != null) {
+            System.out.println(num + " " + temp.getData().getFName() + " " + temp.getData().getLName());
+            num += 1;
+            temp = temp.getNext();
+        }
     }
 }

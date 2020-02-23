@@ -37,6 +37,14 @@ public class Main {
                     myProgram.search(name);
                     break;
                 }
+                case 4: {
+                    System.out.println("Here are all your contacts:");
+                    myProgram.displayList();
+                    System.out.println("Press the number against the contact to delete it: ");
+                    int num = scanner.nextInt();
+                    myProgram.delete(num);
+                    break;
+                }
             }
         }
     }
