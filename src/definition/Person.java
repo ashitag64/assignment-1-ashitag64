@@ -10,4 +10,21 @@ public class Person {
     private String LName;
     private ArrayList<BigInteger> contactList = new ArrayList<>();
     private String email;
+
+    //getter methods for the fields of person class
+    public String getFName() {
+        return FName;
+    }
+
+    public String getLName() {
+        return LName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public ArrayList<BigInteger> getContactList() {
+        return contactList;
+    }
 }
