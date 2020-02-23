@@ -27,4 +27,21 @@ public class Person {
     public ArrayList<BigInteger> getContactList() {
         return contactList;
     }
+
+    //setter methods for the fields of person class
+    public void setFName(String FName) {
+        this.FName = FName;
+    }
+
+    public void setContactList(ArrayList<BigInteger> contactList) {
+        this.contactList = contactList;
+    }
+
+    public void setLName(String LName) {
+        this.LName = LName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
