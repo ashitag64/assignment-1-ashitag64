@@ -10,11 +10,13 @@ public class MyProgram implements MyProgramADT {
     // This variable will store the current size of the contact list.
     private int size = 0;
 
+    //add() method to add a contact in the contact list.
     @Override
-    public void add(Person item) {
-
+    public void add(Person data) {
+        Node node = new Node(data, head);
+        head = node;
+        size++;
     }
-
     @Override
     public void view() {
 
