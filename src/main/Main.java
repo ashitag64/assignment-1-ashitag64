@@ -27,6 +27,10 @@ public class Main {
                     myProgram.add(result);
                     break;
                 }
+                case 2: {
+                    myProgram.view();
+                    break;
+                }
             }
         }
     }
