@@ -10,24 +10,4 @@ public class Node {
         this.data = data;
         this.next = next;
     }
-
-    // getter method for the node's next field
-    Node getNext() {
-        return next;
-    }
-
-    // getter method for the node's data field
-    Person getData() {
-        return data;
-    }
-
-    //setter method  for the node's next field
-    void setNext(Node next) {
-        this.next = next;
-    }
-
-    //setter method  for the node's data field
-    void setData(Person data) {
-        this.data = data;
-    }
 }
