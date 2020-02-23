@@ -10,4 +10,15 @@ public class Node {
         this.data = data;
         this.next = next;
     }
+
+    // getter method for the node's next field
+    Node getNext() {
+        return next;
+    }
+
+    // getter method for the node's data field
+    Person getData() {
+        return data;
+    }
+
 }
