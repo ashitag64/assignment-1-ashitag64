@@ -7,6 +7,9 @@ public class MyProgram implements MyProgramADT {
     // This reference variable will store the reference to the first contact of the contact list.
     private Node head = null;
 
+    // This variable will store the current size of the contact list.
+    private int size = 0;
+
     @Override
     public void add(Person item) {
 
