@@ -1,4 +1,6 @@
 package definition;
 
-public class MyProgram {
+import adt.MyProgramADT;
+
+public class MyProgram implements MyProgramADT {
 }
