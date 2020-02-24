@@ -24,7 +24,6 @@ public class MyProgram implements MyProgramADT {
     //view() method to view the complete contact list.
     @Override
     public void view() {
-        try{
             if (head != null) {
                 Node temp1 = head;
                 ArrayList<String> listNames = new ArrayList<>(size);
@@ -52,10 +51,10 @@ public class MyProgram implements MyProgramADT {
                     System.out.println();
                 }
             }
-        }
-        catch (NullPointerException e){
-            System.out.println("Contact List is Empty!");
-        }
+            else
+            {
+                System.out.println("Contact List is Empty!");
+            }
     }
 
     //search() method to search for a contact in the contact list.
