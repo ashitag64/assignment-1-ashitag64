@@ -68,7 +68,10 @@ public class Main {
         System.out.print("Last Name: ");
         person.setLName(scanner.nextLine());
         ArrayList<BigInteger> contactNumber = new ArrayList<>();
-        System.out.println("Would you like to add your contact number? (y/n):");
+        System.out.print("Contact Number:");
+        contactNumber.add(scanner.nextBigInteger());
+        person.setContactList(contactNumber);
+        System.out.println("Would you like to add another contact number? (y/n):");
         char response = scanner.next().charAt(0);
         while (response == 'y' || response == 'Y') {
             if (response == 'y' || response == 'Y') {
