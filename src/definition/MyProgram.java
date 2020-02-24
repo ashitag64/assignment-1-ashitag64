@@ -28,16 +28,20 @@ public class MyProgram implements MyProgramADT {
             if (head != null) {
                 Node temp1 = head;
                 ArrayList<String> listNames = new ArrayList<>(size);
+                String strName = "";
                 while (temp1 != null) {
-                    listNames.add((String) temp1.getData().getFName());
+                    strName = (String) (temp1.getData().getFName() + temp1.getData().getLName());
+                    listNames.add(strName);
                     temp1 = temp1.getNext();
                 }
                 Collections.sort(listNames);
                 System.out.println("---Here are all your contacts---");
                 for (int i = 0; i < listNames.size(); i++) {
                     Node temp = head;
+                    String str = "";
                     while (temp != null) {
-                        if (listNames.get(i).equals(temp.getData().getFName())) {
+                        str = (String) (temp.getData().getFName() + temp.getData().getLName());
+                        if (listNames.get(i).equals(str)) {
                             System.out.println("-------- * -------- * -------- * --------");
                             System.out.println(temp.getData());
                             System.out.println("-------- * -------- * -------- * --------");
