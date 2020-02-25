@@ -86,13 +86,13 @@ public class MyProgram implements MyProgramADT {
         Node temp = head;
         Node previous = null;
         String result = "";
-        if (item == 1) {
-            result = (String) (temp.getData().getFName() + " " + temp.getData().getLName());
-            System.out.println(result + "'s contact deleted from list!");
-            head = temp.getNext();
-            temp = head;
-        } else {
-            try {
+        try {
+            if (item == 1) {
+                result = (String) (temp.getData().getFName() + " " + temp.getData().getLName());
+                System.out.println(result + "'s contact deleted from list!");
+                head = temp.getNext();
+                temp = head;
+            } else {
                 for (int i = 1; i <= size; i++) {
                     if (i == item) {
                         result = (String) (temp.getData().getFName() + " " + temp.getData().getLName());
@@ -104,17 +104,19 @@ public class MyProgram implements MyProgramADT {
                     previous = temp;
                     temp = temp.getNext();
                 }
-            } catch (NullPointerException e) {
-                System.out.println("Contact List is Empty!");
             }
         }
+            catch (NullPointerException e) {
+                System.out.println("Contact List is Empty!");
+            }
     }
 
     //displayList() method to display the list of contact names of the contact list.
     @Override
     public boolean displayList() {
         boolean response = false;
-        if (size != 0) {
+        if (head != null) {
+            System.out.println("Here are all your contacts:");
             Node temp = head;
             int num = 1;
             while (temp != null) {
@@ -123,9 +125,8 @@ public class MyProgram implements MyProgramADT {
                 temp = temp.getNext();
             }
             response = true;
-        } else {
-            response = false;
         }
         return response;
     }
 }
+

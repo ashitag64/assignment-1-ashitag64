@@ -32,15 +32,14 @@ public class Main {
                     break;
                 }
                 case 3: {
-                    System.out.println("You could search for a contact from their first names: ");
-                    String name = scanner.nextLine();
-                    myProgram.search(name);
-                    break;
+                        System.out.println("You could search for a contact from their first names: ");
+                        String name = scanner.nextLine();
+                        myProgram.search(name);
+                        break;
                 }
                 case 4: {
                     boolean result1 = myProgram.displayList();
                     if (result1 == true) {
-                        System.out.println("Here are all your contacts:");
                         System.out.println("Press the number against the contact to delete it: ");
                         int num = scanner.nextInt();
                         myProgram.delete(num);
