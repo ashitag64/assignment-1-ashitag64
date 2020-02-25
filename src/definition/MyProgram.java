@@ -4,6 +4,7 @@ import adt.MyProgramADT;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class MyProgram implements MyProgramADT {
 
@@ -57,26 +58,35 @@ public class MyProgram implements MyProgramADT {
 
     //search() method to search for a contact in the contact list.
     @Override
-    public void search(String item) {
-        Node temp = head;
-        int count = 0;
-        ArrayList<Person> list = new ArrayList<>();
-        while (temp != null) {
-            if (temp.getData().getFName().equals(item)) {
-                count += 1;
-                list.add((Person) temp.getData());
+    public void search() {
+        if(head != null) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("You could search for a contact from their first names: ");
+            String item = scanner.nextLine();
+            Node temp = head;
+            int count = 0;
+            ArrayList<Person> list = new ArrayList<>();
+            while (temp != null) {
+                if (temp.getData().getFName().equals(item)) {
+                    count += 1;
+                    list.add((Person) temp.getData());
+                }
+                temp = temp.getNext();
             }
-            temp = temp.getNext();
+            if (count != 0) {
+                System.out.println(count + " match found!");
+                for (int i = 0; i < list.size(); i++) {
+                    System.out.println("-------- * -------- * -------- * --------");
+                    System.out.println(list.get(i));
+                    System.out.println("-------- * -------- * -------- * --------");
+                }
+            } else {
+                System.out.println("NO RESULTS FOUND!");
+            }
         }
-        if (count != 0) {
-            System.out.println(count + " match found!");
-            for (int i = 0; i < list.size(); i++) {
-                System.out.println("-------- * -------- * -------- * --------");
-                System.out.println(list.get(i));
-                System.out.println("-------- * -------- * -------- * --------");
-            }
-        } else {
-            System.out.println("NO RESULTS FOUND!");
+        else
+        {
+            System.out.println("Contact List is Empty!");
         }
     }
 
