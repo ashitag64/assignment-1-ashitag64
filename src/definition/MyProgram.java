@@ -24,37 +24,35 @@ public class MyProgram implements MyProgramADT {
     //view() method to view the complete contact list.
     @Override
     public void view() {
-            if (head != null) {
-                Node temp1 = head;
-                ArrayList<String> listNames = new ArrayList<>(size);
-                String strName = "";
-                while (temp1 != null) {
-                    strName = (String) (temp1.getData().getFName() + temp1.getData().getLName());
-                    listNames.add(strName);
-                    temp1 = temp1.getNext();
-                }
-                Collections.sort(listNames);
-                System.out.println("---Here are all your contacts---");
-                for (int i = 0; i < listNames.size(); i++) {
-                    Node temp = head;
-                    String str = "";
-                    while (temp != null) {
-                        str = (String) (temp.getData().getFName() + temp.getData().getLName());
-                        if (listNames.get(i).equals(str)) {
-                            System.out.println("-------- * -------- * -------- * --------");
-                            System.out.println(temp.getData());
-                            System.out.println("-------- * -------- * -------- * --------");
-                            break;
-                        }
-                        temp = temp.getNext();
+        if (head != null) {
+            Node temp1 = head;
+            ArrayList<String> listNames = new ArrayList<>(size);
+            String strName = "";
+            while (temp1 != null) {
+                strName = (String) (temp1.getData().getFName() + temp1.getData().getLName());
+                listNames.add(strName);
+                temp1 = temp1.getNext();
+            }
+            Collections.sort(listNames);
+            System.out.println("---Here are all your contacts---");
+            for (int i = 0; i < listNames.size(); i++) {
+                Node temp = head;
+                String str = "";
+                while (temp != null) {
+                    str = (String) (temp.getData().getFName() + temp.getData().getLName());
+                    if (listNames.get(i).equals(str)) {
+                        System.out.println("-------- * -------- * -------- * --------");
+                        System.out.println(temp.getData());
+                        System.out.println("-------- * -------- * -------- * --------");
+                        break;
                     }
-                    System.out.println();
+                    temp = temp.getNext();
                 }
+                System.out.println();
             }
-            else
-            {
-                System.out.println("Contact List is Empty!");
-            }
+        } else {
+            System.out.println("Contact List is Empty!");
+        }
     }
 
     //search() method to search for a contact in the contact list.
@@ -100,6 +98,7 @@ public class MyProgram implements MyProgramADT {
                         result = (String) (temp.getData().getFName() + " " + temp.getData().getLName());
                         System.out.println(result + "'s contact deleted from list!");
                         previous.setNext(temp.getNext());
+                        size--;
                         break;
                     }
                     previous = temp;
@@ -113,13 +112,20 @@ public class MyProgram implements MyProgramADT {
 
     //displayList() method to display the list of contact names of the contact list.
     @Override
-    public void displayList() {
-        Node temp = head;
-        int num = 1;
-        while (temp != null) {
-            System.out.println(num + " " + temp.getData().getFName() + " " + temp.getData().getLName());
-            num += 1;
-            temp = temp.getNext();
+    public boolean displayList() {
+        boolean response = false;
+        if (size != 0) {
+            Node temp = head;
+            int num = 1;
+            while (temp != null) {
+                System.out.println(num + " " + temp.getData().getFName() + " " + temp.getData().getLName());
+                num += 1;
+                temp = temp.getNext();
+            }
+            response = true;
+        } else {
+            response = false;
         }
+        return response;
     }
 }

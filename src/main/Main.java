@@ -38,11 +38,15 @@ public class Main {
                     break;
                 }
                 case 4: {
-                    System.out.println("Here are all your contacts:");
-                    myProgram.displayList();
-                    System.out.println("Press the number against the contact to delete it: ");
-                    int num = scanner.nextInt();
-                    myProgram.delete(num);
+                    boolean result1 = myProgram.displayList();
+                    if (result1 == true) {
+                        System.out.println("Here are all your contacts:");
+                        System.out.println("Press the number against the contact to delete it: ");
+                        int num = scanner.nextInt();
+                        myProgram.delete(num);
+                    } else {
+                        System.out.println("Contact List is Empty!");
+                    }
                     break;
                 }
                 case 5: {
